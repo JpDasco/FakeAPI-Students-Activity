@@ -1,5 +1,4 @@
 <?php
-    // Set headers to allow cross-origin requests
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
     header('Access-Control-Allow-Headers: Content-Type');
@@ -13,11 +12,6 @@
 
     $query = "select * from students";
     $result = mysqli_query($conn,$query);
-    // if(mysqli_num_rows($result) > 0){
-    //     while($show = mysqli_fetch_assoc($result)){
-    //         echo $show['name'];
-    //     }
-    // }
 
     $method = $_SERVER['REQUEST_METHOD'];
     if(mysqli_num_rows($result) > 0){
@@ -27,21 +21,6 @@
     }else{
         echo "No Record Found!";
     }
-    // $data = [
-    //     [            
-    //         "name" => "Juan Dela Cruz",
-    //         "course" => "BEED"
-    //     ],
-    //     [            
-    //         "name" => "Pepito Manaloto",
-    //         "course" => "AB PolSci"
-    //     ],
-    //     [            
-    //         "name" => "Renmark Salalila",
-    //         "course" => "BSIT"
-    //     ]
-    // ];
-
 
     if($method == "GET") {        
         if(isset($_GET['id'])) {
@@ -60,9 +39,6 @@
         $temp = urldecode(file_get_contents('http://test.test/FakeAPI-Students-Activity/php/'));
         parse_str($temp, $value);
 
-        // $query = "INSERT INTO students (name,course) VALUES ('miss','dash')";
-        // $add = mysqli_query($conn,$query);
-        // array_push($data, ["name" => $value['name'], "course" => $value['course']]);
         $name = $value['name'];
         $course = $value['course'];
         $query = "INSERT INTO students(name,course) VALUES ('$name','$course')";
@@ -78,16 +54,12 @@
         $temp = urldecode(file_get_contents('http://test.test/FakeAPI-Students-Activity/php/'));
         parse_str($temp, $value);
         
-        // array_push($data, ["id" => $value['id'], "name" => $value['name'], "course" => $value['course']]);
         $id = $value['id'];
         $name = $value['name'];
         $course = $value['course'];
         $query = "UPDATE students SET name = '$name', course = '$course' WHERE id = '$id'";
         $update = mysqli_query($conn,$query);
 
-        
-        // $data[$_GET['id']]['name'] = $value['name'];
-        // $data[$_GET['id']]['course'] = $value['course'];
 
         $response = [
             "message" => "Put Success",
