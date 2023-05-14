@@ -46,7 +46,7 @@
         $address = $value['address'];
         $email = $value['email'];
         $phone = $value['phone'];
-        $query = "INSERT INTO students(firstname,lastname,course,year,address,email,phone) VALUES ('$firstname','$lastname','$course','$year','$address','$email','$phone')";
+        $query = "INSERT INTO students(firstname, lastname, course, year, address, email, phone) VALUES ('$firstname','$lastname','$course','$year','$address','$email','$phone')";
         $add = mysqli_query($conn,$query);
         $response = [
             "message" => "Post Success",
@@ -60,8 +60,8 @@
         parse_str($temp, $value);
         
         $id = $value['id'];
-        $name = $value['firstname'];
-        $course = $value['lastname'];
+        $firstname = $value['firstname'];
+        $lastname = $value['lastname'];
         $course = $value['course'];
         $year = $value['year'];
         $address = $value['address'];
