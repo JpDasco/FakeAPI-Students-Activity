@@ -17,10 +17,6 @@
     
 </head>
 <body onload="get_record()">
-    <!-- <button onclick="get_record()">Get Record</button>
-    <button onclick="add_record()">Add Record</button>
-    <button onclick="update_record()">Update Record</button>
-    <button onclick="delete_record()">Delete Record</button> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <div class="container-xl">
@@ -177,7 +173,7 @@
         txt = "";
         function get_record() {
             $.ajax({
-                url: "http://test.test/FakeAPI-students/students/",
+                url: "http://test.test/FakeAPI-Students-Activity/php/",
                 method: "GET",
                 success: function(response) {
                     txt = "";
@@ -225,7 +221,7 @@
             var formData = $(this).serialize();
             console.log(formData);
             $.ajax({
-                url: "http://test.test/FakeAPI-students/students/",
+                url: "http://test.test/FakeAPI-Students-Activity/php/",
                 method: "POST",
                 data:formData,
                 success: function(response) {
@@ -243,7 +239,7 @@
             var formData = $(this).serialize();
             console.log(formData);
             $.ajax({
-                url: "http://test.test/FakeAPI-students/students/",
+                url: "http://test.test/FakeAPI-Students-Activity/php/",
                 method: "PUT",
                 data:formData,
                 success: function(response) {
@@ -261,7 +257,7 @@
             var formData = $(this).serialize();
             console.log(formData);
             $.ajax({
-                url: "http://test.test/FakeAPI-students/students/",
+                url: "http://test.test/FakeAPI-Students-Activity/php/",
                 method: "DELETE",
                 data:formData,
                 success: function(response) {
