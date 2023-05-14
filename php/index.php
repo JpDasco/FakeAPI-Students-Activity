@@ -81,7 +81,7 @@
         $temp = urldecode(file_get_contents('php://input'));
         parse_str($temp, $value);
         $id = $value['id'];
-        $query = "DELETE FROM students WHERE id = '$id'";
+        $query = "DELETE FROM tbl_students WHERE id = '$id'";
         $deletes = mysqli_query($conn,$query);
         $response = [
             "message" => "Delete Success",
