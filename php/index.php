@@ -36,12 +36,17 @@
     }
 
     if($method == "POST") {
-        $temp = urldecode(file_get_contents('http://test.test/FakeAPI-Students-Activity/php/'));
+        $temp = urldecode(file_get_contents('php://input'));
         parse_str($temp, $value);
 
-        $name = $value['name'];
+        $firstname = $value['firstname'];
+        $lastname = $value['lastname'];
         $course = $value['course'];
-        $query = "INSERT INTO students(name,course) VALUES ('$name','$course')";
+        $year = $value['year'];
+        $address = $value['address'];
+        $email = $value['email'];
+        $phone = $value['phone'];
+        $query = "INSERT INTO students(firstname,lastname,course,year,address,email,phone) VALUES ('$firstname','$lastname','$course','$year','$address','$email','$phone')";
         $add = mysqli_query($conn,$query);
         $response = [
             "message" => "Post Success",
@@ -51,15 +56,19 @@
     }
 
     if($method == "PUT") {
-        $temp = urldecode(file_get_contents('http://test.test/FakeAPI-Students-Activity/php/'));
+        $temp = urldecode(file_get_contents('php://input'));
         parse_str($temp, $value);
         
         $id = $value['id'];
-        $name = $value['name'];
+        $name = $value['firstname'];
+        $course = $value['lastname'];
         $course = $value['course'];
-        $query = "UPDATE students SET name = '$name', course = '$course' WHERE id = '$id'";
+        $year = $value['year'];
+        $address = $value['address'];
+        $email = $value['email'];
+        $phone = $value['phone'];
+        $query = "UPDATE students SET firstname = '$firstname', lastname = '$lastname', course = '$course', year = '$year', address = '$address', email = '$email', phone = '$phone' WHERE id = '$id'";
         $update = mysqli_query($conn,$query);
-
 
         $response = [
             "message" => "Put Success",
@@ -69,7 +78,7 @@
     }
 
     if($method == "DELETE") {
-        $temp = urldecode(file_get_contents('http://test.test/FakeAPI-Students-Activity/php/'));
+        $temp = urldecode(file_get_contents('php://input'));
         parse_str($temp, $value);
         $id = $value['id'];
         $query = "DELETE FROM students WHERE id = '$id'";
