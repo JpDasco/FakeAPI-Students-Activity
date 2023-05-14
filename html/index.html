@@ -50,23 +50,26 @@
             </div>
         </div>        
     </div>
-    <br>
     
-        <form action="index.html" method="post" id="posts" class="decor">            
-            <div class="form-inner">
-              <h1>Add a student</h1>
-              <input type="text" name="firstname" placeholder="firstname">
-              <input type="text" name="lastname" placeholder="lastname">
-              <input type="text" name="course" placeholder="course">
-              <input type="text" name="year" placeholder="year">
-              <input type="text" name="address" placeholder="address">
-              <input type="text" name="email" placeholder="email">
-              <input type="text" name="phone" placeholder="phone">
-              <button>Add Student</button>
+    <div class="container">
+        <form action="index.html" method="post" id="posts" class="decor">
+          <div class="form-inner ml-2 mr-5">
+            <h1>Add a student</h1>
+            <div class="text-center">
+              <p>Fill in the form below.</p>
             </div>
+            <input type="text" name="firstname" placeholder="Enter First name">
+            <input type="text" name="lastname" placeholder="Enter Last name">
+            <input type="text" name="course" placeholder="Course">
+            <input type="text" name="year" placeholder="Year Level">
+            <input type="text" name="address" placeholder="Address">
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="phone" placeholder="Phone no.">
+            <button class="btn btn-primary">Add Student</button>
+          </div>
         </form>
-    
-
+      </div>
+        
         <form action="index.html" method="post" id="updates">
             <div class="modal fade" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-notify modal-warning" role="document">
@@ -128,7 +131,7 @@
                             <br>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true" class="white-text">&times;</span> </button>
                         </div>
-                        
+                       
                         <div class="modal-footer justify-content-center">
                             <button>Yes</button>
                             <button data-dismiss="modal" >No</button>
