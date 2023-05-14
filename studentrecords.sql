@@ -43,7 +43,10 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `firstname`, `lastname`, `course`, `year`, `address`, `email`, `phone`) VALUES
-(27, 'paulo', 'dasco', 'bsit', '3rd year', 'San Rafael, Tarlac', 'dascojp@gmail.com', '09997767734');
+(27, 'John', 'Doe', 'BSIT', '3rd year', 'San Sebastian, Tarlac', 'johndoe@gmail.com', '09997767734');
+
+INSERT INTO `students` (`id`, `firstname`, `lastname`, `course`, `year`, `address`, `email`, `phone`) VALUES
+(27, 'John Paulo', 'Dasco', 'BSIT', '3rd Year', 'San Rafael, Tarlac', 'dascojp@gmail.com', '09997767734');
 
 --
 -- Indexes for dumped tables
